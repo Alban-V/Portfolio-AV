@@ -1,0 +1,7 @@
+@import "./variables/variables.scss";
+
+body {
+    height: 100dvh;
+    width: 100dvw;
+    background-color: $primary-color;
+}
