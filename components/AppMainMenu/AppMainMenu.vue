@@ -1,13 +1,22 @@
 <template>
     <div class="sidenav-container">
-        <ToggleButton/>
-        <nav id="sidenav">
+        <ToggleButton 
+            @click="toggleMenuOpeningState"
+            :closed="menuOpeningState"
+        />
+        <nav id="sidenav" :class="{ 'closed': !menuOpeningState }">
             
         </nav>
     </div>
 </template>
-<script setup>
+<script lang="ts" setup>
 import ToggleButton from './ToggleButton.vue';
+
+const menuOpeningState = ref(false);
+
+const toggleMenuOpeningState = () => {
+    menuOpeningState.value = !menuOpeningState.value;
+};
 </script>
 <style lang="scss" scoped>
 .sidenav-container {
@@ -23,6 +32,10 @@ import ToggleButton from './ToggleButton.vue';
         box-shadow: 0px 0px 18px 0px $tertiary-color;
         border-radius: 0 1.3rem 1.3rem 0;
         transform: skew(-5deg) translate(0, -50%);
+
+        &.closed {
+            left: -600px;
+        }
     }
 }
 
