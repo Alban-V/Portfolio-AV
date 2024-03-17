@@ -1,6 +1,6 @@
 <template>
     <div class="sidenav-container">
-        <ToggleButton id="sidenav-button" />
+        <ToggleButton/>
         <nav id="sidenav">
             
         </nav>
@@ -12,14 +12,6 @@ import ToggleButton from './ToggleButton.vue';
 <style lang="scss" scoped>
 .sidenav-container {
     position: relative;
-    display: inline-block;
-    
-    #sidenav-button {
-        position: absolute;
-        top: 3rem;
-        left: calc((315px - 120px) + 10px);
-        z-index: 1;
-    }
 
     #sidenav {
         width: 315px;
