@@ -1,7 +1,9 @@
-@import "./variables/variables.scss";
+// @import "./variables/variables.scss";
 
 body {
     height: 100dvh;
     width: 100dvw;
+    margin: 0;
+    padding: 1rem;
     background-color: $primary-color;
 }
