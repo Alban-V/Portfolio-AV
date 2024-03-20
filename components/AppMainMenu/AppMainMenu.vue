@@ -1,11 +1,16 @@
 <template>
     <div class="sidenav-container">
-        <ToggleButton 
-            @click="toggleMenuOpeningState"
-            :closed="menuOpeningState"
-        />
         <nav id="sidenav" :class="{ 'closed': !menuOpeningState }">
-            
+            <ToggleButton 
+                @click="toggleMenuOpeningState"
+                :closed="menuOpeningState"
+            />
+            <div id="sidenav__body" :class="{'closed': !menuOpeningState}">
+
+            </div>
+            <div id="sidenav__footer" :class="{'closed': !menuOpeningState}">
+
+            </div>  
         </nav>
     </div>
 </template>
@@ -23,18 +28,38 @@ const toggleMenuOpeningState = () => {
     position: relative;
 
     #sidenav {
-        width: 315px;
-        height: 94dvh;
-        position: fixed;
-        top: 50%;
-        left: -120px;
-        background-color: $secondary-color;
-        box-shadow: 0px 0px 18px 0px $tertiary-color;
-        border-radius: 0 1.3rem 1.3rem 0;
-        transform: skew(-5deg) translate(0, -50%);
+        &__body {
+            position: fixed;
+            top: -20dvh;
+            left: -220px;
+            width: 400px;
+            height: 150dvh;
+            background-color: $secondary-color;
+            transform: rotate(12deg);
+            box-shadow: 0px 0px 18px 0px $tertiary-color;
+            transition: ease-in-out 0.4s;
 
-        &.closed {
-            left: -600px;
+            &.closed {
+                left: -150dvw;
+                top: -50dvh;
+            }
+        }
+
+        &__footer {
+            position: fixed;
+            bottom: -324px;
+            left: -222px;
+            width: 400px;
+            height: 100dvh;
+            background-color: $secondary-color;
+            transform: rotate(-26deg);
+            box-shadow: 0px 0px 18px 0px $tertiary-color;
+            transition: ease-in-out 0.7s;
+
+            &.closed {
+                left: -100%;
+                bottom: -50%;
+            }
         }
     }
 }
