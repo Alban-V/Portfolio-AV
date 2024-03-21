@@ -8,7 +8,9 @@
             <div id="sidenav__body" :class="{'closed': !menuOpeningState}">
                 <div id="sidenav__body__background" :class="{ 'closed': !menuOpeningState }"></div >
                 <div id="sidenav__body__wrapper" :class="{ 'closed': !menuOpeningState }" >
-                    <h1>{{ pageTitle }}</h1>
+                    
+                        <h1>{{ pageTitle }}</h1>
+                  
                     
                 </div>
             </div>
@@ -43,7 +45,7 @@ onMounted(() => {
 
         &__body {
             position: relative;
-            width: 262px;
+            width: 300px;
             height: 100dvh;
             filter: drop-shadow(0 0 0.75rem $tertiary-color);
             transition: all 0.6s ease-in-out;
@@ -58,13 +60,13 @@ onMounted(() => {
                 left: -100%;
                 top: -50%;
                 height: 150vh;
-                width: 580px;
+                width: 600px;
                 background-color: $secondary-color;
                 clip-path: polygon(0 0, 100% 25%, 50% 100%, 0 100%);
             }
 
             &__wrapper {
-                width: 100%;
+                width: 262px;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
@@ -73,12 +75,15 @@ onMounted(() => {
                 top: 10px;
                 color: white;
 
-                h1 {
-                    font-family: "Allison", cursive;
-                    font-size: 2.8rem;
-                    transform: rotate(-2deg);
-                    text-shadow: 2px 2px 2px $tertiary-color;
-                }
+           
+                    h1 {
+                        text-align: left;
+                        font-family: "Major Mono Display", monospace;
+                        font-size: 1.8rem;
+                        text-shadow: 2px 2px 2px $tertiary-color;
+                        padding-left: 2rem;
+                    }
+               
             }
 
             
