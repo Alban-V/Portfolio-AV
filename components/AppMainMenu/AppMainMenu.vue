@@ -8,15 +8,16 @@
             <div id="sidenav__body" :class="{'closed': !menuOpeningState}">
                 <div id="sidenav__body__background" :class="{ 'closed': !menuOpeningState }"></div >
                 <div id="sidenav__body__wrapper" :class="{ 'closed': !menuOpeningState }" >
-                    
-                        <h1>{{ pageTitle }}</h1>
-                  
-                    
+                    <h1>{{ pageTitle }}</h1>
+                    <ul id="sidenav__body__wrapper__items">
+                        <li class="sidenav-item" v-for="(item, index) in navItems" :key="index">
+                            <nuxt-link :to="item.path">{{ item.name }}</nuxt-link>
+                        </li>
+                    </ul>
                 </div>
             </div>
             <div id="sidenav__footer" :class="{'closed': !menuOpeningState}">
                 <div id="sidenav__footer__background" :class="{ 'closed': !menuOpeningState }"></div>
-              
             </div>
         </nav>
     </div>
@@ -24,12 +25,27 @@
 <script lang="ts" setup>
 import ToggleButton from './ToggleButton.vue';
 
+
+type NavItem = {
+    name: string;
+    path: string;
+};
+
+
 const menuOpeningState: Ref<boolean> = ref(false);
-const pageTitle: string = "Alban Vincent";
+const pageTitle: String = "Alban Vincent";
+const navItems: Array<NavItem> = [
+    { name: "Home", path: "/" },
+    { name: "About", path: "/about" },
+    { name: "Projects", path: "/projects" },
+    { name: "Contact", path: "/contact" }
+];
+
 
 const toggleMenuOpeningState = () => {
     menuOpeningState.value = !menuOpeningState.value;
 };
+
 
 onMounted(() => {
     setTimeout(() => {
@@ -74,7 +90,6 @@ onMounted(() => {
                 position: absolute;
                 top: 10px;
                 color: white;
-
            
                     h1 {
                         text-align: left;
@@ -83,10 +98,19 @@ onMounted(() => {
                         text-shadow: 2px 2px 2px $tertiary-color;
                         padding-left: 2rem;
                     }
-               
-            }
 
-            
+                    &__items {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+                        font-size: 1.2rem;
+                        width: 100%;
+                        text-align: left;
+                        margin-top: 2rem;
+                        padding-left: 5rem;
+                        text-shadow: 2px 2px 2px $tertiary-color;
+                    }
+            }
         }
 
         &__footer {

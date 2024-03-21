@@ -10,3 +10,34 @@ body {
     background-color: $primary-color;
     overflow: hidden;
 }
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    font-family: 'Major Mono Display', monospace;
+    text-decoration: none;
+    color: white;
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -5px;
+        height: 2px;
+        width: 0;
+        background-color: $quaternary-color;
+        transition: width 0.3s;
+    }
+
+    &:hover::after {
+        width: 100%;
+    }
+}
