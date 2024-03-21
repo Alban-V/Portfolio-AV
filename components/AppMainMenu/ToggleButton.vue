@@ -12,8 +12,8 @@ const props = defineProps({
 </script>
 <style lang="scss" scoped>
 #sidenav-button {
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     position: absolute;
     top: 2rem;
     right: 2rem;
