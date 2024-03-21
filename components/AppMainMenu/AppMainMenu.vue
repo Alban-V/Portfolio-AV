@@ -76,7 +76,7 @@ onMounted(() => {
                 left: -100%;
                 top: -50%;
                 height: 150vh;
-                width: 600px;
+                width: 700px;
                 background-color: $secondary-color;
                 clip-path: polygon(0 0, 100% 25%, 50% 100%, 0 100%);
             }
@@ -96,7 +96,7 @@ onMounted(() => {
                         font-family: "Major Mono Display", monospace;
                         font-size: 1.8rem;
                         text-shadow: 2px 2px 2px $tertiary-color;
-                        padding-left: 2rem;
+                        padding-left: 5rem;
                     }
 
                     &__items {
@@ -107,7 +107,7 @@ onMounted(() => {
                         width: 100%;
                         text-align: left;
                         margin-top: 2rem;
-                        padding-left: 5rem;
+                        padding-left: 10rem;
                         text-shadow: 2px 2px 2px $tertiary-color;
                     }
             }
@@ -126,7 +126,7 @@ onMounted(() => {
                 height: 150vh;
                 width: 550px;
                 background-color: $secondary-color;
-                clip-path: polygon(45% 0%, 101% 34%, 0% 100%, 0 100%);
+                clip-path: polygon(55% 0%, 100% 34%, 0% 100%, 0 100%);
                 transition: all 0.3s ease-in-out;
                 z-index: 1;
                 transition: all 1s ease-in-out;

@@ -31,9 +31,14 @@ const props = defineProps({
 
     &.closed {
         transform: rotate(135deg);
+
+        &:hover {
+            transform: rotate(135deg) scale(1.1);
+        }
     }
     &:hover {
         background-color: $quaternary-color;
+        transform: rotate(45deg) scale(1.1) ;
     }
 
     svg#icon {
