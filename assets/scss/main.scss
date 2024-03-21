@@ -1,8 +1,11 @@
 // @import "./variables/variables.scss";
+@import url('https://fonts.googleapis.com/css2?family=Allison&family=Water+Brush&display=swap');
+
 
 body {
     height: 100dvh;
     width: 100dvw;
     margin: 0;
     background-color: $primary-color;
+    overflow: hidden;
 }

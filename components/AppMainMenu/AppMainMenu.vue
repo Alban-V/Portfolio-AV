@@ -43,10 +43,10 @@ onMounted(() => {
 
         &__body {
             position: relative;
-            width: 250px;
+            width: 262px;
             height: 100dvh;
             filter: drop-shadow(0 0 0.75rem $tertiary-color);
-            transition: all 1s ease-in-out;
+            transition: all 0.6s ease-in-out;
             left: 0;
 
             &.closed {
@@ -58,7 +58,7 @@ onMounted(() => {
                 left: -100%;
                 top: -50%;
                 height: 150vh;
-                width: 550px;
+                width: 580px;
                 background-color: $secondary-color;
                 clip-path: polygon(0 0, 100% 25%, 50% 100%, 0 100%);
             }
@@ -72,6 +72,13 @@ onMounted(() => {
                 position: absolute;
                 top: 10px;
                 color: white;
+
+                h1 {
+                    font-family: "Allison", cursive;
+                    font-size: 2.8rem;
+                    transform: rotate(-2deg);
+                    text-shadow: 2px 2px 2px $tertiary-color;
+                }
             }
 
             
@@ -90,10 +97,10 @@ onMounted(() => {
                 height: 150vh;
                 width: 550px;
                 background-color: $secondary-color;
-                clip-path: polygon(0 0, 100% 25%, 50% 100%, 0 100%);
+                clip-path: polygon(45% 0%, 101% 34%, 0% 100%, 0 100%);
                 transition: all 0.3s ease-in-out;
                 z-index: 1;
-                transition: all 0.5s ease-in-out;
+                transition: all 1s ease-in-out;
 
                 &.closed {
                     left: -200dvw;
